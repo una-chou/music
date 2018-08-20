@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    books:[]
   },
 
   /**
@@ -18,16 +18,23 @@ Page({
 
     bookModel.getHotList()
       .then(res=>{
-        console.log(res)
-        return bookModel.getMyBookCount()
+        this.setData({
+          books: res
+        })
       })
-      .then(res=>{
-        console.log(res)
-        return bookModel.getMyBookCount()
-      })
-      .then(res=>{
-        console.log(res)
-      })
+
+    // bookModel.getHotList()
+    //   .then(res=>{
+    //     console.log(res)
+    //     return bookModel.getMyBookCount()
+    //   })
+    //   .then(res=>{
+    //     console.log(res)
+    //     return bookModel.getMyBookCount()
+    //   })
+    //   .then(res=>{
+    //     console.log(res)
+    //   })
 
     // promise的错误用法
     // const hotList = bookModel.getHotList()
